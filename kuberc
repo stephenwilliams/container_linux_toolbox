@@ -1,0 +1,9 @@
+if [ -f /media/root/root/.kube/config ]; then
+	export KUBECONFIG=/media/root/root/.kube/config
+elif [ -f /media/root/etc/kubernetes/admin.conf ]; then
+	export KUBECONFIG=/media/root/etc/kubernetes/admin.conf
+fi
+
+alias k=kubectl
+alias ks="kubectl -n kube-system"
+alias km="kubectl -n monitoring"
